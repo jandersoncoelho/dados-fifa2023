@@ -1,8 +1,6 @@
 import streamlit as st
-import locale
 from lib import utilities as util
 
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 util.config_pages()
 st.header("Página de Jogadores")
 
@@ -33,7 +31,7 @@ st.subheader(f"Overall {player_stats['Overall']}")
 st.progress(int(player_stats['Overall']))
 
 col1, col2, col3, col4 = st.columns(4)
-valor_mercado = locale.format_string('%1f', util.converter_libra_para_real(player_stats['Value(£)']), grouping=True)
+valor_mercado = util.converter_libra_para_real(player_stats['Value(£)'])
 col1.metric(label="Valor de mercado", value=f'R$ {valor_mercado}')
 col2.metric(label="Remuneração semanal", value=f"R$ {util.converter_libra_para_real(player_stats['Wage(£)']):,}")
 col3.metric(label="Cláusula de rescisão", value=f"R$ {util.converter_libra_para_real(player_stats['Release Clause(£)']):,}")
