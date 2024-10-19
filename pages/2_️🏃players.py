@@ -35,5 +35,3 @@ valor_mercado = util.converter_libra_para_real(player_stats['Value(£)'])
 col1.metric(label="Valor de mercado", value=f'R$ {valor_mercado}')
 col2.metric(label="Remuneração semanal", value=f"R$ {util.converter_libra_para_real(player_stats['Wage(£)']):,}")
 col3.metric(label="Cláusula de rescisão", value=f"R$ {util.converter_libra_para_real(player_stats['Release Clause(£)']):,}")
-
-st.write(player_stats)
